@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Member</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container my-2">
+<h1>Edit Member Details</h1>
+<hr>
+<h2>Edit Member</h2>
+<form action="#" th:action="@{/updateMember}" th:object="${member}" method="POST">
+    <input type="hidden" th:field="*{id}" />
+    <input type="text" th:field ="*{firstName}" th:placeholder="#{Member First Name}" class="form-control mb-4 col-4">
+    <input type="text" th:field ="*{lastName}" th:placeholder="#{Member Last Name}" class="form-control mb-4 col-4">
+    <input type="text" th:field ="*{age}" th:placeholder="#{Member Age}" class="form-control mb-4 col-4">
+    <input type="text" th:field ="*{job}" th:placeholder="#{Member Job}" class="form-control mb-4 col-4">
+    <button type="submit" class="btn btn-info col-2"> Update Member</button>
+</form>
+<hr>
+<a th:href="@{/}">back</a>
+</div>
+</body>
+</html>
